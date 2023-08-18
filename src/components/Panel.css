@@ -1,0 +1,18 @@
+:root {
+  --main-bg-color: #27293d;
+  --main-text-color: ##f8f5f9;
+
+  --second-bg-color: ##f8f5f9;
+}
+
+.rounded-full {
+  border-radius: 100%;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+#menu-toggle {
+  cursor: pointer;
+}
