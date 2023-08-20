@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Personaliza el visor del scroll horizontal */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Personaliza el fondo del visor del scroll */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Personaliza la barra del visor del scroll */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Personaliza la barra del visor del scroll en hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.btn2 {
+  position: relative;
+  transition: 0.5s ease;
+}
+.btn2:hover {
+  transform: scale(1.02);
 }
