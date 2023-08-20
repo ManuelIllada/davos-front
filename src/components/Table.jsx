@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Files from "./Files";
 
 function Table() {
   const [data, setData] = useState([]); // Utilizamos el estado para almacenar los datos obtenidos
@@ -63,6 +64,7 @@ function Table() {
           </button>
         </div>
       </div>
+      <Files />
     </div>
   );
 }
