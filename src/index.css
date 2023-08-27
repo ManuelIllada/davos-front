@@ -30,3 +30,7 @@
 .btn2:hover {
   transform: scale(1.02);
 }
+
+.hpage {
+  height: calc(100vh - 6.5rem);
+}
