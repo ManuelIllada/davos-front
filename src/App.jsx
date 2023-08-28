@@ -24,6 +24,14 @@ function App() {
     setSelectedDepartment(departmentData);
   };
 
+  const [selectedClient, setSelectedClient] = useState({
+    client: "",
+  });
+
+  const handleSelectedClient = (clientData) => {
+    setSelectedClient(clientData);
+  };
+
   return (
     <ThemeProvider>
       <Router>
@@ -38,12 +46,33 @@ function App() {
             element={
               <CityFilter
                 selectedSeller={selectedSeller}
+                onSellerSelected={handleSelectedSeller}
                 onDepartmentsSelected={handleSelectedDepartment}
               />
             }
           />
-          <Route path="/clientfilter" element={<ClientFilter />} />
-          <Route path="/table" element={<Table />} />
+          <Route
+            path="/clientfilter"
+            element={
+              <ClientFilter
+                selectedSeller={selectedSeller}
+                selectedDepartment={selectedDepartment}
+                onSellerSelected={handleSelectedSeller}
+                onDepartmentsSelected={handleSelectedDepartment}
+                onClientsSelected={handleSelectedClient}
+              />
+            }
+          />
+          <Route
+            path="/table"
+            element={
+              <Table
+                selectedSeller={selectedSeller}
+                selectedDepartment={selectedDepartment}
+                selectedClient={selectedClient}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </Router>

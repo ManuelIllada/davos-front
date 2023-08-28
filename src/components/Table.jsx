@@ -2,12 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Progress } from "@material-tailwind/react";
 
-function Table() {
+function Table({ selectedSeller, selectedDepartment, selectedClient }) {
   const [data, setData] = useState([]); // Utilizamos el estado para almacenar los datos obtenidos
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/salesInterior/articlesNotSold")
+      .get("http://localhost:3333/salesInterior/articlesNotSold", {
+        params: {
+          seller: selectedSeller.seller,
+          department: selectedDepartment.department,
+          client: selectedClient.client,
+        },
+      })
 
       .then((response) => {
         setData(response.data); // Actualizamos el estado con los datos obtenidos
@@ -15,7 +21,7 @@ function Table() {
       .catch((error) => {
         console.error("Error al obtener datos:", error);
       });
-  }, []); // El segundo argumento vacío indica que este efecto solo se ejecuta una vez al montar el componente
+  }, [selectedSeller, selectedDepartment, selectedClient]); // El segundo argumento vacío indica que este efecto solo se ejecuta una vez al montar el componente
 
   const [progressValue, setProgressValue] = useState(75);
 

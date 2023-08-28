@@ -1,13 +1,19 @@
 import { Progress } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function CityFilter({ selectedSeller, onDepartmentsSelected }) {
+function CityFilter({
+  selectedSeller,
+  onSellerSelected,
+  onDepartmentsSelected,
+}) {
   const [data, setData] = useState([]);
   const [progressValue, setProgressValue] = useState(5);
   const [selectedItem, setSelectedItem] = useState("");
-  console.log("Received selectedSeller:", selectedSeller);
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get("http://localhost:3333/sellers/departments", {
@@ -43,7 +49,9 @@ function CityFilter({ selectedSeller, onDepartmentsSelected }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    onDepartmentsSelected(selectedItem);
+    onSellerSelected({ seller: selectedSeller.seller });
+    onDepartmentsSelected({ department: selectedItem });
+    navigate("/clientfilter");
   };
   return (
     <div name="cityfilter" className=" bg-gray-100 hpage">
@@ -86,11 +94,9 @@ function CityFilter({ selectedSeller, onDepartmentsSelected }) {
             );
           })}
         </select>
-        <Link to="/cityfilter">
-          <button className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
-            Aceptar
-          </button>
-        </Link>
+        <button className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+          Aceptar
+        </button>
       </form>
     </div>
   );
