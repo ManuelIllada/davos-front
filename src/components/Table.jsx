@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Progress } from "@material-tailwind/react";
 
 function Table() {
   const [data, setData] = useState([]); // Utilizamos el estado para almacenar los datos obtenidos
@@ -16,6 +17,27 @@ function Table() {
       });
   }, []); // El segundo argumento vacío indica que este efecto solo se ejecuta una vez al montar el componente
 
+  const [progressValue, setProgressValue] = useState(75);
+
+  useEffect(() => {
+    const targetValue = 100; // Valor final de la barra de progreso
+    const step = 0.3; // Paso de incremento
+    const updateInterval = 10; // Intervalo de actualización en milisegundos
+    let currentValue = progressValue;
+
+    const updateProgress = () => {
+      if (currentValue < targetValue) {
+        currentValue += step;
+        setProgressValue(currentValue);
+      } else {
+        clearInterval(progressInterval);
+      }
+    };
+
+    const progressInterval = setInterval(updateProgress, updateInterval);
+
+    return () => clearInterval(progressInterval); // Limpiamos el intervalo en la limpieza del efecto
+  }, []);
   return (
     <div name="table" className=" bg-gray-100 hpage">
       <div className="text-center py-8 mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
@@ -24,6 +46,14 @@ function Table() {
           <h1 className="text-3xl font-semibold mx-4">Productos No Vendidos</h1>
           <div className="w-1/4 h-0.5 bg-gray-300"></div>
         </div>
+      </div>
+      <div className="flex items-center justify-center mb-6">
+        <Progress
+          value={progressValue}
+          size="lg"
+          className="border border-gray-900/10 bg-gray-900/5 p-1 w-1/2"
+          transitionDuration="1000ms" // Ajusta la duración de la transición
+        />
       </div>
       <div className="flex items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
