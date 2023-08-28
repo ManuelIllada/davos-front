@@ -45,7 +45,6 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
     return () => clearInterval(progressInterval); // Limpiamos el intervalo en la limpieza del efecto
   }, []);
 
-  let i = 0;
   return (
     <div name="table" className=" bg-gray-100 hpage">
       <div className="text-center py-8 mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
@@ -73,7 +72,6 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
                   <th className="py-3 px-4 text-left">Nombre</th>
                   <th className="py-3 px-4 text-left">Categoría</th>
                   <th className="py-3 px-4 text-left">Marca</th>
-                  <th className="py-3 px-4 text-left">numero</th>
                 </tr>
               </thead>
               <tbody>
@@ -84,7 +82,6 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
                       <td className="px-4 py-3">{item.name}</td>
                       <td className="px-4 py-3">{item.family}</td>
                       <td className="px-4 py-3">{item.brand}</td>
-                      <td className="px-4 py-3">{(i = i + 1)}</td>
                     </tr>
                   );
                 })}
