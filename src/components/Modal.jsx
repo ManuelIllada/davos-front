@@ -53,39 +53,44 @@ const Modal = ({ open, onClose }) => {
             X
           </p>
           <div className="content max-w-md mx-auto">
-            <div className=" ">
-              <label
-                htmlFor="fileMontevideo"
-                className="block font-medium mb-2"
-              >
-                Archivo Montevideo:
-              </label>
-              <input
-                type="file"
-                id="fileMontevideo"
-                accept=".xlsx"
-                onChange={handleMontevideoFileChange}
-              />
-            </div>
-            <div className="">
-              <label htmlFor="fileInterior" className="block font-medium mb-2">
-                Archivo Interior:
-              </label>
-              <input
-                type="file"
-                id="fileInterior"
-                accept=".xlsx"
-                onChange={handleInteriorFileChange}
-              />
-            </div>
-            <div className="btnContainer">
-              <button
-                onClick={handleUpload}
-                className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
-              >
-                Subir Archivos
-              </button>
-            </div>
+            <form onSubmit={handleUpload}>
+              <div className=" ">
+                <label
+                  htmlFor="fileMontevideo"
+                  className="block font-medium mb-2"
+                >
+                  Archivo Montevideo:
+                </label>
+                <input
+                  type="file"
+                  id="fileMontevideo"
+                  accept=".xlsx"
+                  onChange={handleMontevideoFileChange}
+                />
+              </div>
+              <div className="">
+                <label
+                  htmlFor="fileInterior"
+                  className="block font-medium mb-2"
+                >
+                  Archivo Interior:
+                </label>
+                <input
+                  type="file"
+                  id="fileInterior"
+                  accept=".xlsx"
+                  onChange={handleInteriorFileChange}
+                />
+              </div>
+              <div className="btnContainer">
+                <button
+                  onClick={handleUpload}
+                  className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
+                >
+                  Subir Archivos
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
