@@ -1,8 +1,26 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import axios from "axios";
 
 function Footer() {
   const [openModal, setOpenModal] = useState(false);
+
+  const handleDeleteData = async () => {
+    try {
+      const responseMontevideo = await axios.delete(
+        "http://localhost:3333/salesMontevideo/delete"
+      );
+      console.log("Response from Montevideo:", responseMontevideo.data);
+
+      const responseInterior = await axios.delete(
+        "http://localhost:3333/salesInterior/delete"
+      );
+      console.log("Response from Interior:", responseInterior.data);
+    } catch (error) {
+      console.error("Error deleting data:", error);
+    }
+  };
+
   return (
     <footer className=" bg-black sticky bottom-0 py-4">
       <div className="flex items-center justify-center ">
@@ -12,7 +30,10 @@ function Footer() {
         >
           Subir Datos
         </button>
-        <button className="bg-gray-700 m-4 focus:outline-none text-white hover:bg-red-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+        <button
+          onClick={handleDeleteData}
+          className="bg-gray-700 m-4 focus:outline-none text-white hover:bg-red-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
+        >
           Eliminar Datos
         </button>
       </div>

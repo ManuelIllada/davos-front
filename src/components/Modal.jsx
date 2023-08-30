@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import modal from "../modal.jpg";
+import modal from "../imgModal.jpg";
 import axios from "axios";
 
 const Modal = ({ open, onClose }) => {
