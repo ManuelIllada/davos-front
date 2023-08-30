@@ -101,7 +101,7 @@ const Modal = ({ open, onClose }) => {
           <p className="closeBtn" onClick={onClose}>
             X
           </p>
-          <div className="content max-w-md mx-auto">
+          <div className="content ">
             <form onSubmit={handleUpload}>
               <div className=" ">
                 <label className="block font-medium mb-2">
@@ -114,8 +114,8 @@ const Modal = ({ open, onClose }) => {
                 />
               </div>
 
-              <div className="btnContainer">
-                <button className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+              <div className="">
+                <button className=" text-white bg-black border-2">
                   Subir Archivos
                 </button>
               </div>
@@ -131,8 +131,8 @@ const Modal = ({ open, onClose }) => {
                   onChange={handleInteriorFileChange}
                 />
               </div>
-              <div className="btnContainer">
-                <button className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+              <div className="">
+                <button className=" text-white bg-black border-2">
                   Subir Archivos
                 </button>
               </div>
@@ -148,8 +148,8 @@ const Modal = ({ open, onClose }) => {
                   onChange={handleArticlesFileChange}
                 />
               </div>
-              <div className="btnContainer">
-                <button className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+              <div className="">
+                <button className=" text-white bg-black border-2">
                   Subir Archivos
                 </button>
               </div>
@@ -165,8 +165,8 @@ const Modal = ({ open, onClose }) => {
                   onChange={handleClientFileChange}
                 />
               </div>
-              <div className="btnContainer">
-                <button className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+              <div className="">
+                <button className=" text-white bg-black border-2">
                   Subir Archivos
                 </button>
               </div>
