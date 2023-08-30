@@ -17,21 +17,28 @@ const Modal = ({ open, onClose }) => {
   const handleUpload = async () => {
     try {
       const formDataMontevideo = new FormData();
-      formDataMontevideo.append("file", fileMontevideo);
-
-      const formDataInterior = new FormData();
-      formDataInterior.append("file", fileInterior);
+      formDataMontevideo.append("table", fileMontevideo);
 
       const responseMontevideo = await axios.post(
         "http://localhost:3333/salesMontevideo/populate",
         formDataMontevideo
       );
       console.log("Response from Montevideo:", responseMontevideo.data);
+    } catch (error) {
+      console.error("Error uploading files:", error);
+    }
+  };
+
+  const handleUploadInt = async () => {
+    try {
+      const formDataInterior = new FormData();
+      formDataInterior.append("table", fileInterior);
 
       const responseInterior = await axios.post(
         "http://localhost:3333/salesInterior/populate",
         formDataInterior
       );
+
       console.log("Response from Interior:", responseInterior.data);
     } catch (error) {
       console.error("Error uploading files:", error);
@@ -55,38 +62,35 @@ const Modal = ({ open, onClose }) => {
           <div className="content max-w-md mx-auto">
             <form onSubmit={handleUpload}>
               <div className=" ">
-                <label
-                  htmlFor="fileMontevideo"
-                  className="block font-medium mb-2"
-                >
+                <label className="block font-medium mb-2">
                   Archivo Montevideo:
                 </label>
                 <input
                   type="file"
                   id="fileMontevideo"
-                  accept=".xlsx"
                   onChange={handleMontevideoFileChange}
                 />
               </div>
+
+              <div className="btnContainer">
+                <button className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+                  Subir Archivos
+                </button>
+              </div>
+            </form>
+            <form onSubmit={handleUploadInt}>
               <div className="">
-                <label
-                  htmlFor="fileInterior"
-                  className="block font-medium mb-2"
-                >
+                <label className="block font-medium mb-2">
                   Archivo Interior:
                 </label>
                 <input
                   type="file"
                   id="fileInterior"
-                  accept=".xlsx"
                   onChange={handleInteriorFileChange}
                 />
               </div>
               <div className="btnContainer">
-                <button
-                  onClick={handleUpload}
-                  className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
-                >
+                <button className="bg-gray-700 m-4 text-white hover:bg-green-700 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
                   Subir Archivos
                 </button>
               </div>
