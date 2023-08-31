@@ -103,72 +103,55 @@ const Modal = ({ open, onClose }) => {
           </p>
           <div className="content ">
             <form onSubmit={handleUpload}>
-              <div className=" ">
-                <label className="block font-medium mb-2">
-                  Archivo Montevideo:
+              <div className=" btnContainer">
+                <label className="block mb-2 font-extrabold">
+                  Ventas Montevideo:
                 </label>
                 <input
                   type="file"
                   id="fileMontevideo"
                   onChange={handleMontevideoFileChange}
                 />
-              </div>
 
-              <div className="">
-                <button className=" text-white bg-black border-2">
-                  Subir Archivos
-                </button>
+                <button className=" btnPrimary ">Subir Archivos</button>
               </div>
             </form>
             <form onSubmit={handleUploadInt}>
-              <div className="">
-                <label className="block font-medium mb-2">
-                  Archivo Interior:
+              <div className="btnContainer">
+                <label className="block mb-2 font-extrabold">
+                  Ventas Interior:
                 </label>
                 <input
                   type="file"
                   id="fileInterior"
                   onChange={handleInteriorFileChange}
                 />
-              </div>
-              <div className="">
-                <button className=" text-white bg-black border-2">
-                  Subir Archivos
-                </button>
+
+                <button className="btnPrimary">Subir Archivos</button>
               </div>
             </form>
             <form onSubmit={handleUploadArt}>
-              <div className="">
-                <label className="block font-medium mb-2">
-                  Archivo Artículos:
-                </label>
+              <div className="btnContainer">
+                <label className="block  font-extrabold mb-2">Artículos:</label>
                 <input
                   type="file"
                   id="fileArticles"
                   onChange={handleArticlesFileChange}
                 />
-              </div>
-              <div className="">
-                <button className=" text-white bg-black border-2">
-                  Subir Archivos
-                </button>
+
+                <button className="btnPrimary">Subir Archivos</button>
               </div>
             </form>
             <form onSubmit={handleUploadClt}>
-              <div className="">
-                <label className="block font-medium mb-2">
-                  Archivo Clientes:
-                </label>
+              <div className="btnContainer">
+                <label className="block font-extrabold mb-2">Clientes:</label>
                 <input
                   type="file"
                   id="fileClient"
                   onChange={handleClientFileChange}
                 />
-              </div>
-              <div className="">
-                <button className=" text-white bg-black border-2">
-                  Subir Archivos
-                </button>
+
+                <button className="btnPrimary">Subir Archivos</button>
               </div>
             </form>
           </div>

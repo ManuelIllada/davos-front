@@ -58,7 +58,7 @@
   border-radius: 8px;
 }
 .imgModal {
-  width: 300px;
+  width: 30%;
   object-fit: cover;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
@@ -77,9 +77,21 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  text-align: center;
-  /* margin-top: 3rem;
-  padding: 1rem 2rem; */
+  text-align: start;
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+}
+.btnContainer button {
+  width: 30%;
+  margin: 0.5rem;
+  /* padding: 16px 0; */
+  /* border: none; */
+  border: 1px solid #411b57;
+  /* color: #ffffff; */
+}
+.btnPrimary {
+  background-color: #411b57;
+  color: white;
 }
 
 @media screen and (max-width: 700px) {
