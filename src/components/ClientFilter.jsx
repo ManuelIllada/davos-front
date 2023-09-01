@@ -14,6 +14,12 @@ function ClientFilter({
   const [selectedItem, setSelectedItem] = useState("");
   const [data, setData] = useState([]);
 
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  useEffect(() => {
+    setIsButtonDisabled(selectedItem === "");
+  }, [selectedItem]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -101,7 +107,10 @@ function ClientFilter({
             );
           })}
         </select>
-        <button className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+        <button
+          disabled={isButtonDisabled}
+          className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
+        >
           Aceptar
         </button>
       </form>

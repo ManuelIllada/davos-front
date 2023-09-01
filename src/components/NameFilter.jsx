@@ -8,6 +8,12 @@ function NameFilter({ onSellerSelected }) {
   const [progressValue, setProgressValue] = useState(0);
   const [selectedItem, setSelectedItem] = useState("");
 
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+  useEffect(() => {
+    setIsButtonDisabled(selectedItem === "");
+  }, [selectedItem]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -91,14 +97,17 @@ function NameFilter({ onSellerSelected }) {
             );
           })}
         </select>
-        <button className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3">
+        <button
+          disabled={isButtonDisabled}
+          className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
+        >
           Aceptar
         </button>
       </form>
       <div className="flex flex-col items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48 ">
         <button
           onClick={handleClick}
-          className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-black 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
+          className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-black 2xl:w-48 xl:w-44 btn2 lg:w-36 w-32 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
         >
           Lista de Artículos
         </button>

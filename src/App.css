@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+.inputFile {
+  display: none;
+}
+
+.labelFile {
+  margin-left: 10%;
+  background-color: #62839a;
+  color: white;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.labelFile:hover {
+  background-color: #725e56;
+}
+
+.syncored {
+  font-family: "Raleway", sans-serif;
+}
