@@ -62,6 +62,15 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
           transitionDuration="1000ms" // Ajusta la duración de la transición
         />
       </div>
+      <div className="relative mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
+        <div className="flex justify-between items-center pb-2 font-bold">
+          <p className="mr-2 ">{selectedSeller.seller}</p>
+          <p className="mr-2" style={{ textTransform: "uppercase" }}>
+            {selectedDepartment.department}
+          </p>
+          <p>{selectedClient.client}</p>
+        </div>
+      </div>
       <div className="flex items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="overflow-x-auto max-h-[70vh]">

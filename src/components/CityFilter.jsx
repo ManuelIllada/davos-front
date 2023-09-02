@@ -34,9 +34,9 @@ function CityFilter({
   }, [selectedSeller]);
 
   useEffect(() => {
-    const targetValue = 35; // Valor final de la barra de progreso
-    const step = 0.3; // Paso de incremento
-    const updateInterval = 10; // Intervalo de actualización en milisegundos
+    const targetValue = 35;
+    const step = 0.3;
+    const updateInterval = 10;
     let currentValue = progressValue;
 
     const updateProgress = () => {
@@ -50,7 +50,7 @@ function CityFilter({
 
     const progressInterval = setInterval(updateProgress, updateInterval);
 
-    return () => clearInterval(progressInterval); // Limpiamos el intervalo en la limpieza del efecto
+    return () => clearInterval(progressInterval);
   }, []);
 
   const handleSubmit = async (event) => {
@@ -59,6 +59,7 @@ function CityFilter({
     onDepartmentsSelected({ department: selectedItem });
     navigate("/clientfilter");
   };
+
   return (
     <div name="cityfilter" className=" bg-gray-100 hpage">
       <div className="text-center py-8 mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
@@ -77,6 +78,11 @@ function CityFilter({
           className="border border-gray-900/10 bg-gray-900/5 p-1 w-1/2"
           transitionDuration="1000ms" // Ajusta la duración de la transición
         />
+      </div>
+      <div className="text-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
+        <div className=" items-center pb-2 font-bold">
+          <p className="mr-2 mt-2">{selectedSeller.seller}</p>
+        </div>
       </div>
       <form
         className="flex flex-col items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48 h-1/2"

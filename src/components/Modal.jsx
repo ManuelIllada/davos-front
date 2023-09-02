@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import modal from "../imgModal.jpg";
 import axios from "axios";
+import modal from "../imgModal.jpg"; // Importa tu imagen modal aquí
 
 const Modal = ({ open, onClose }) => {
   const [files, setFiles] = useState({
@@ -10,19 +10,7 @@ const Modal = ({ open, onClose }) => {
     fileClient: null,
   });
 
-  const [selectedFileNames, setSelectedFileNames] = useState({
-    fileMontevideo: "",
-    fileInterior: "",
-    fileArticles: "",
-    fileClient: "",
-  });
-
   const handleFileChange = (e, fileType) => {
-    const fileName = e.target.files[0]?.name || "";
-    setSelectedFileNames((prevFileNames) => ({
-      ...prevFileNames,
-      [fileType]: fileName,
-    }));
     setFiles({
       ...files,
       [fileType]: e.target.files[0],
@@ -65,73 +53,51 @@ const Modal = ({ open, onClose }) => {
         className="absolute inset-0 bg-black opacity-50"
         onClick={onClose}
       ></div>
-      <div className="modalContainer bg-white rounded-lg shadow-lg  max-w-md">
+      <div className="modalContainer bg-white rounded-lg shadow-lg max-w-md">
         <img src={modal} alt="/" className="imgModal" />
         <form onSubmit={(e) => e.preventDefault()} className="content">
-          <div className="grid grid-cols-1 gap-4 mb-4">
-            <div className="mb-2 grid grid-cols-2">
-              <label className="font-extrabold">Ventas Montevideo:</label>
-              <input
-                type="file"
-                id="fileMontevideo"
-                className="inputFile mt-1"
-                onChange={(e) => handleFileChange(e, "fileMontevideo")}
-              />
-              <label htmlFor="fileMontevideo" className="labelFile mt-1">
-                {selectedFileNames.fileMontevideo
-                  ? selectedFileNames.fileMontevideo
-                  : "Seleccionar archivo"}
+          {Object.entries(files).map(([fileType, file], index) => (
+            <div key={index} className="mb-1">
+              <label className="font-extrabold">
+                {fileType === "fileMontevideo"
+                  ? "Ventas Montevideo:"
+                  : fileType === "fileInterior"
+                  ? "Ventas Interior:"
+                  : fileType === "fileArticles"
+                  ? "Artículos:"
+                  : "Clientes:"}
               </label>
+              <div className="flex">
+                <input
+                  type="file"
+                  id={`file${fileType}`}
+                  accept=".xlsx"
+                  className="inputFile mt-1 hidden"
+                  onChange={(e) => handleFileChange(e, fileType)}
+                />
+                {!file ? (
+                  <label
+                    htmlFor={`file${fileType}`}
+                    className="selectFileButton cursor-pointer bg-gray-300 py-1 px-3 rounded-lg mt-1 ml-2 hover:bg-gray-400"
+                  >
+                    Seleccionar archivo
+                  </label>
+                ) : (
+                  <p className="selectedFile  text-red-500 font-bold">
+                    {file.name}
+                  </p>
+                )}
+              </div>
             </div>
-            <div className="mb-2 grid grid-cols-2">
-              <label className="font-extrabold">Ventas Interior:</label>
-              <input
-                type="file"
-                id="fileInterior"
-                className="inputFile mt-1"
-                onChange={(e) => handleFileChange(e, "fileInterior")}
-              />
-              <label htmlFor="fileInterior" className="labelFile mt-1">
-                {selectedFileNames.fileInterior
-                  ? selectedFileNames.fileInterior
-                  : "Seleccionar archivo"}
-              </label>
-            </div>
-            <div className="mb-2 grid grid-cols-2">
-              <label className="font-extrabold">Artículos:</label>
-              <input
-                type="file"
-                id="fileArticles"
-                className="inputFile mt-1"
-                onChange={(e) => handleFileChange(e, "fileArticles")}
-              />
-              <label htmlFor="fileArticles" className="labelFile mt-1">
-                {selectedFileNames.fileArticles
-                  ? selectedFileNames.fileArticles
-                  : "Seleccionar archivo"}
-              </label>
-            </div>
-            <div className="mb-2 grid grid-cols-2">
-              <label className="font-extrabold">Clientes:</label>
-              <input
-                type="file"
-                id="fileClient"
-                className="inputFile mt-1"
-                onChange={(e) => handleFileChange(e, "fileClient")}
-              />
-              <label htmlFor="fileClient" className="labelFile mt-1">
-                {selectedFileNames.fileClient
-                  ? selectedFileNames.fileClient
-                  : "Seleccionar archivo"}
-              </label>
-            </div>
-          </div>
+          ))}
+
           <p
             className="closeBtn cursor-pointer text-center me-2"
             onClick={onClose}
           >
             x
           </p>
+
           <button
             className="bg-gray-700 w-full m-auto text-white py-2 px-4 rounded-full text-center hover:bg-gray-800 transition duration-300"
             onClick={handleUpload}
