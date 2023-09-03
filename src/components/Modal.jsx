@@ -83,7 +83,7 @@ const Modal = ({ open, onClose }) => {
                     Seleccionar archivo
                   </label>
                 ) : (
-                  <p className="selectedFile  text-red-500 font-bold">
+                  <p className="selectedFile text-light-green-600 font-bold">
                     {file.name}
                   </p>
                 )}
@@ -99,7 +99,7 @@ const Modal = ({ open, onClose }) => {
           </p>
 
           <button
-            className="bg-gray-700 w-full m-auto text-white py-2 px-4 rounded-full text-center hover:bg-gray-800 transition duration-300"
+            className="bg-gray-700 w-full m-auto mt-3 text-white py-2 px-4 rounded-full text-center hover:bg-gray-800 transition duration-300"
             onClick={handleUpload}
           >
             Subir Archivos

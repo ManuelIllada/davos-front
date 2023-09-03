@@ -35,7 +35,7 @@ function Footer() {
   };
 
   return (
-    <footer className=" bg-black sticky bottom-0 py-4">
+    <footer className=" bg-black sticky bottom-0 py-2">
       <div className="flex items-center justify-center">
         <button
           onClick={() => setOpenModal(true)}
@@ -57,7 +57,10 @@ function Footer() {
         </a>
       </div>
 
-      <Modal open={openModal} onClose={() => setOpenModal(false)} />
+      <Modal
+        open={openModal}
+        onClose={() => setOpenModal(false, window.location.reload())}
+      />
       <ReconfirmationModal
         open={openReconfirmationModal}
         onCancel={handleCancelDeleteData}

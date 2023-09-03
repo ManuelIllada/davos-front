@@ -43,15 +43,17 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
     const progressInterval = setInterval(updateProgress, updateInterval);
 
     return () => clearInterval(progressInterval); // Limpiamos el intervalo en la limpieza del efecto
-  }, []);
+  }, [progressValue]);
 
   return (
     <div name="table" className=" bg-gray-100 hpage">
-      <div className="text-center py-8 mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
+      <div className="text-center pt-4 pb-3 sm:py-8 mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
         <div className="flex items-center justify-center">
-          <div className="w-1/4 h-0.5 bg-gray-300"></div>
-          <h1 className="text-3xl font-semibold mx-4">Productos No Vendidos</h1>
-          <div className="w-1/4 h-0.5 bg-gray-300"></div>
+          <div className="w-1/4 h-0.5 bg-gray-300 hidden sm:block "></div>
+          <h1 className="font-semibold mx-4 text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+            Productos No Vendidos
+          </h1>
+          <div className="w-1/4 h-0.5 bg-gray-300 hidden sm:block"></div>
         </div>
       </div>
       <div className="flex items-center justify-center mb-6">
@@ -62,18 +64,10 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
           transitionDuration="1000ms" // Ajusta la duración de la transición
         />
       </div>
-      <div className="relative mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
-        <div className="flex justify-between items-center pb-2 font-bold">
-          <p className="mr-2 ">{selectedSeller.seller}</p>
-          <p className="mr-2" style={{ textTransform: "uppercase" }}>
-            {selectedDepartment.department}
-          </p>
-          <p>{selectedClient.client}</p>
-        </div>
-      </div>
-      <div className="flex items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="overflow-x-auto max-h-[70vh]">
+
+      <div className="flex items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48 ">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden ">
+          <div className="overflow-x-auto max-h-[60vh]">
             <table className="table-auto">
               <thead className="bg-gray-700 text-white shadow-lg sticky top-0">
                 <tr>
@@ -96,6 +90,15 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
                 })}
               </tbody>
             </table>
+          </div>
+          <div className="relative px-6 text-white bg-gray-700 text-xs sm:text-sm md:text-md  lg:text-lg">
+            <div className="flex justify-between items-center py-2 font-bold">
+              <p className="mr-2 ">{selectedSeller.seller}</p>
+              <p className="mr-2" style={{ textTransform: "uppercase" }}>
+                {selectedDepartment.department}
+              </p>
+              <p>{selectedClient.client}</p>
+            </div>
           </div>
         </div>
       </div>

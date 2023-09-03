@@ -56,7 +56,7 @@ function ClientFilter({
     const progressInterval = setInterval(updateProgress, updateInterval);
 
     return () => clearInterval(progressInterval); // Limpiamos el intervalo en la limpieza del efecto
-  }, []);
+  }, [progressValue]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -85,14 +85,7 @@ function ClientFilter({
           transitionDuration="1000ms" // Ajusta la duración de la transición
         />
       </div>
-      <div className="text-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
-        <div className="items-center pb-2 font-bold">
-          <p className="mr-2 mb-2 mt-2">{selectedSeller.seller}</p>
-          <p className="mr-2" style={{ textTransform: "uppercase" }}>
-            {selectedDepartment.department}
-          </p>
-        </div>
-      </div>
+
       <form
         className="flex flex-col items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48 h-1/2"
         onSubmit={handleSubmit}
@@ -122,6 +115,14 @@ function ClientFilter({
           Aceptar
         </button>
       </form>
+      <div className="text-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
+        <div className="items-center pb-2 font-bold">
+          <p className="mr-2 mb-2 mt-2">{selectedSeller.seller}</p>
+          <p className="mr-2" style={{ textTransform: "uppercase" }}>
+            {selectedDepartment.department}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

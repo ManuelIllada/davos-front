@@ -45,7 +45,7 @@ function NameFilter({ onSellerSelected }) {
     const progressInterval = setInterval(updateProgress, updateInterval);
 
     return () => clearInterval(progressInterval);
-  }, []);
+  }, [progressValue]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

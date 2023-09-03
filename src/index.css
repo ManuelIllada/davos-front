@@ -74,11 +74,13 @@
 }
 
 .content {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  text-align: start;
-  margin-top: 3rem;
+  justify-content: flex-start;
+  text-align: flex-start;
+  margin: 1rem;
   padding: 1rem 2rem;
 }
 .btnContainer button {
