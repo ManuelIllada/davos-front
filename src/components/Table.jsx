@@ -7,7 +7,7 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/salesInterior/articlesNotSold", {
+      .get(`${process.env.REACT_APP_API_URL}/salesInterior/articlesNotSold`, {
         params: {
           seller: selectedSeller.seller,
           department: selectedDepartment.department,

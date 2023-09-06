@@ -18,7 +18,7 @@ function NameFilter({ onSellerSelected }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/sellers")
+      .get(`${process.env.REACT_APP_API_URL}/sellers`)
       .then((response) => {
         setData(response.data);
       })

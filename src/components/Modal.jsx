@@ -25,7 +25,7 @@ const Modal = ({ open, onClose }) => {
           const formData = new FormData();
           formData.append("table", file);
 
-          const url = `http://localhost:3333/${
+          const url = `${process.env.REACT_APP_API_URL}/${
             key === "fileMontevideo"
               ? "salesMontevideo"
               : key === "fileInterior"

@@ -22,7 +22,7 @@ function CityFilter({
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/sellers/departments", {
+      .get(`${process.env.REACT_APP_API_URL}/sellers/departments`, {
         params: { seller: selectedSeller.seller },
       })
       .then((response) => {

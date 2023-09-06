@@ -24,7 +24,7 @@ function ClientFilter({
 
   useEffect(() => {
     axios
-      .get("http://localhost:3333/sellers/clients", {
+      .get(`${process.env.REACT_APP_API_URL}/sellers/clients`, {
         params: {
           seller: selectedSeller.seller,
           department: selectedDepartment.department,

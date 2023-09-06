@@ -22,13 +22,13 @@ const FileUploadForm = () => {
       formDataInterior.append("file", fileInterior);
 
       const responseMontevideo = await axios.post(
-        "http://localhost:3333/salesMontevideo/populate",
+        `${process.env.REACT_APP_API_URL}/salesMontevideo/populate`,
         formDataMontevideo
       );
       console.log("Response from Montevideo:", responseMontevideo.data);
 
       const responseInterior = await axios.post(
-        "http://localhost:3333/salesInterior/populate",
+        `${process.env.REACT_APP_API_URL}/salesInterior/populate`,
         formDataInterior
       );
       console.log("Response from Interior:", responseInterior.data);

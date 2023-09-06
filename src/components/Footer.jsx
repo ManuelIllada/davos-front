@@ -14,12 +14,12 @@ function Footer() {
   const handleConfirmDeleteData = async () => {
     try {
       const responseMontevideo = await axios.delete(
-        "http://localhost:3333/salesMontevideo/delete"
+        `${process.env.REACT_APP_API_URL}/salesMontevideo/delete`
       );
       console.log("Response from Montevideo:", responseMontevideo.data);
 
       const responseInterior = await axios.delete(
-        "http://localhost:3333/salesInterior/delete"
+        `${process.env.REACT_APP_API_URL}/salesInterior/delete`
       );
       console.log("Response from Interior:", responseInterior.data);
 
