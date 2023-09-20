@@ -6,7 +6,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="p-1 bg-black sticky top-0">
+    <nav className="p-1 bg-black sticky top-0 z-50">
       <div className="flex justify-center items-center h-16">
         <button className="h-full" onClick={handleLinkClick}>
           <img className="h-full" src="/image/logodavos.png" alt="logo" />

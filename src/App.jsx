@@ -2,8 +2,6 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-tailwind/react";
 import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import Table from "./components/Table";
 import NameFilter from "./components/NameFilter";
 import CityFilter from "./components/CityFilter";
@@ -35,7 +33,6 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <Navbar />
         <Routes>
           <Route
             path="/"
@@ -74,7 +71,6 @@ function App() {
             }
           />
         </Routes>
-        <Footer />
       </Router>
     </ThemeProvider>
   );
