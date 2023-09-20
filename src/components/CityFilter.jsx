@@ -66,7 +66,7 @@ function CityFilter({
     <div name="cityfilter" className=" bg-gray-100">
       <Navbar />
       <div className="min-h-[calc(100dvh-128px)]">
-        <div className="text-center py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10  mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
+        <div className="text-center py-4 md:py-6 lg:py-8 xl:py-10  mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
           <div className="flex items-center justify-center">
             <div className="w-1/4 h-0.5 bg-gray-300 hidden sm:block"></div>
             <h1 className="text-3xl font-semibold mx-4">
@@ -75,7 +75,7 @@ function CityFilter({
             <div className="w-1/4 h-0.5 bg-gray-300 hidden sm:block"></div>
           </div>
         </div>
-        <div className="flex items-center justify-center py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10 ">
+        <div className="flex items-center justify-center py-4 md:py-6 lg:py-8 xl:py-10 ">
           <Progress
             value={progressValue}
             size="lg"
@@ -85,7 +85,7 @@ function CityFilter({
         </div>
 
         <form
-          className="flex flex-col items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48 h-1/2 py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10 "
+          className="flex flex-col items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48 h-1/2 py-4 md:py-6 lg:py-8 xl:py-10 "
           onSubmit={handleSubmit}
         >
           <label for="underline_select" class="sr-only">
@@ -93,7 +93,7 @@ function CityFilter({
           </label>
           <select
             id="underline_select"
-            className="col-1 block py-2.5 w-1/2 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer  my-2 sm:my-4 md:my-6 lg:my-8 xl:my-10"
+            className="col-1 block py-2.5 w-1/2 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer  my-4 md:my-6 lg:my-8 xl:my-10"
             onChange={(event) => setSelectedItem(event.target.value)}
             value={selectedItem}
           >

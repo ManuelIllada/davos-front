@@ -51,7 +51,7 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
     <div name="table" className=" bg-gray-100">
       <Navbar />
       <div className="min-h-[calc(100dvh-128px)]">
-        <div className="text-center pt-4 py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10  mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
+        <div className="text-center pt-4 py-4 md:py-6 lg:py-8 xl:py-10  mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
           <div className="flex items-center justify-center">
             <div className="w-1/4 h-0.5 bg-gray-300 hidden sm:block "></div>
             <h1 className="font-semibold mx-4 text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
@@ -60,7 +60,7 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
             <div className="w-1/4 h-0.5 bg-gray-300 hidden sm:block"></div>
           </div>
         </div>
-        <div className="flex items-center justify-center mb-6 py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10 ">
+        <div className="flex items-center justify-center mb-6 py-4 md:py-6 lg:py-8 xl:py-10 ">
           <Progress
             value={progressValue}
             size="lg"
