@@ -64,11 +64,11 @@ function NameFilter({ onSellerSelected }) {
     <div className=" bg-gray-100">
       <Navbar />
       <div className="min-h-[calc(100dvh-128px)]">
-        <div className="text-center py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10 mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
+        <div className="text-center pt-4 py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10  mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
           <div className="flex items-center justify-center">
-            <div className="w-1/4 h-0.5 bg-gray-300"></div>
+            <div className="w-1/4 h-0.5 bg-gray-300 hidden sm:block "></div>
             <h1 className="text-3xl font-semibold mx-4">Seleccione Vendedor</h1>
-            <div className="w-1/4 h-0.5 bg-gray-300"></div>
+            <div className="w-1/4 h-0.5 bg-gray-300 hidden sm:block"></div>
           </div>
         </div>
         <div className="flex py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10  items-center justify-center">
