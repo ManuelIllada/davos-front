@@ -71,7 +71,7 @@ function Table({ selectedSeller, selectedDepartment, selectedClient }) {
 
         <div className="flex items-center justify-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48 ">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden ">
-            <div className="overflow-x-auto max-h-[40dvh]">
+            <div className="overflow-x-auto max-h-[50dvh]">
               <table className="table-auto">
                 <thead className="bg-gray-700 text-white shadow-lg sticky top-0">
                   <tr>

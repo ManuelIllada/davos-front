@@ -93,7 +93,7 @@ function CityFilter({
           </label>
           <select
             id="underline_select"
-            className="col-1 block py-2.5 w-1/2 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+            className="col-1 block py-2.5 w-1/2 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer  my-2 sm:my-4 md:my-6 lg:my-8 xl:my-10"
             onChange={(event) => setSelectedItem(event.target.value)}
             value={selectedItem}
           >
@@ -108,7 +108,7 @@ function CityFilter({
           </select>
           <button
             disabled={isButtonDisabled}
-            className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
+            className="bg-gray-700 col-1 mt-2 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
           >
             Aceptar
           </button>

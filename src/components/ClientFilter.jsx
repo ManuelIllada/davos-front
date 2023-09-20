@@ -99,7 +99,7 @@ function ClientFilter({
           </label>
           <select
             id="underline_select"
-            className="col-1 block py-2.5 w-1/2 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+            className="col-1 block py-2.5 w-1/2 px-0 text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer  my-2 sm:my-4 md:my-6 lg:my-8 xl:my-10"
             onChange={(event) => setSelectedItem(event.target.value)}
             value={selectedItem}
           >
@@ -114,12 +114,12 @@ function ClientFilter({
           </select>
           <button
             disabled={isButtonDisabled}
-            className="bg-gray-700 col-1 m-4 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
+            className="bg-gray-700 col-1 mt-2 focus:outline-none text-white hover:bg-brown-500 2xl:w-40 xl:w-36 btn2 lg:w-28 w-24 rounded-md 2xl:text-xl xl:text-lg lg:text-md text-sm py-3"
           >
             Aceptar
           </button>
         </form>
-        <div className="text-center mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
+        <div className="text-center  mx-6 sm:mx-10 md:mx-20 lg:mx-36 xl:mx-48">
           <div className="items-center pb-2 font-bold">
             <p className="mr-2 mb-2 mt-2">{selectedSeller.seller}</p>
             <p className="mr-2" style={{ textTransform: "uppercase" }}>
